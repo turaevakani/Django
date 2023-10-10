@@ -1,0 +1,12 @@
+{% include 'header.html' %}
+
+<h1>Детальная информация</h1>
+   <h2>{{book_key.title}}</h2>
+   <p>{{book_key.description}}</p>
+   <img src="{{book_key.image.url}}" alt="book" width="250" height="250">
+   <p>Жанр: {{book_key.genre}}</p>
+   <iframe src="{{book_key.video}}" frameborder="0"></iframe>
+   <p>Цена: {{book_key.cost}}</p>
+   <p>{{book_key.created_date}}</p>
+
+{% include 'footer.html' %}
