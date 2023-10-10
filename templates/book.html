@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {% for i in book_key %}
+        <h1>{{i.title}}</h1>
+        <p>{{i.description}}</p>
+        <img src="{{i.image.url}}">
+        <p>{{i.cost}}</p>
+        <p>{{i.created_date}}</p>
+    {% endfor %}
+</body>
+</html>
