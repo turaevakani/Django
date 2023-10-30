@@ -1,12 +1,26 @@
 {% include 'header.html' %}
 
 <h1>Детальная информация</h1>
-   <h2>{{book_key.title}}</h2>
-   <p>{{book_key.description}}</p>
-   <img src="{{book_key.image.url}}" alt="book" width="250" height="250">
+   <button><a href="/book_list/{{object.id}}/update/">Изменить</a></button>
+   <button><a href="/book_list/{{object.id}}/delete/">Удалить</a></button>
+   <h2>{{object.title}}</h2>
+   <p>{{object.description}}</p>
+   <img src="{{object.image.url}}" alt="book" width="250" height="250">
    <p>Жанр: {{book_key.genre}}</p>
-   <iframe src="{{book_key.video}}" frameborder="0"></iframe>
-   <p>Цена: {{book_key.cost}}</p>
-   <p>{{book_key.created_date}}</p>
+   <iframe src="{{object.video}}" frameborder="0"></iframe>
+   <p>Цена: {{object.cost}}</p>
+   <p>{{object.created_date}}</p>
+
+<table border="2">
+    <tr>
+        <th> Дата создания отзыва</th> <th>Коммент</th> <th>Оценка</th>
+    </tr>
+
+    {% for i in object.review_object.all %}
+    <tr>
+        <td>{{i.created_at}}</td> <td>{{i.text_review}}</td> <td>{{i.rate_stars}}</td>
+    </tr>
+    {% endfor %}
+</table>
 
 {% include 'footer.html' %}
