@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Yeah! You have successfully authorized!</h1>
+    <p>List of the invited users</p>
+    <ol>
+        {% for i in object_list %}
+        <li>
+            <h2>{{i.username}}</h2>
+        </li>
+        {% endfor %}
+    </ol>
+    <form action="{% url 'users:login' %}" method="post">
+        {% csrf_token %}
+        <button type="submit">Log out from account</button>
+    </form>
+</body>
+</html>

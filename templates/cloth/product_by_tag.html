@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>By tag</title>
+</head>
+<body>
+      <h2>Products with tag {{tag.name}} </h2>
+      {% for i in object_list %}
+        <h1>{{i.name}}</h1>
+        <img src="{{i.image.url}}" class="card-img-top" alt="...">
+
+        <div class="card-body">
+            <h5 class="card-title">{{i.description}}</h5>
+            <p class="card-text">{{i.size}}</p>
+            <p class="card-text">{{i.price}}</p>
+            <p class="card-text">{{i.created_at}}</p>
+        </div>
+      {% endfor %}
+</body>
+</html>
